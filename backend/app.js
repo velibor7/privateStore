@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-//const itemsRoutes = require("./routes/items-routes")
+const itemsRoutes = require("./routes/items-routes");
 const HttpError = require("./models/http-error");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/api/items", itemsRoutes)
+app.use("/api/items", itemsRoutes);
 
 app.use((req, res, next) => {
   const err = new HttpError("We can't give you what you are looking for", 404);
