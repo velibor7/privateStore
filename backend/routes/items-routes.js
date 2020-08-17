@@ -10,7 +10,7 @@ router.get("", itemsControllers.getItems);
 
 // router.use(checkAuth);
 
-// router.post('/', itemsControllers.createCocktail)
+router.post("/", itemsControllers.createItem);
 
 //router.patch('/:iid', itemsControllers.updateItem )
 router.delete("/:iid", itemsControllers.deleteItem);
