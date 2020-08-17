@@ -12,7 +12,7 @@ router.get("", itemsControllers.getItems);
 
 router.post("/", itemsControllers.createItem);
 
-//router.patch('/:iid', itemsControllers.updateItem )
+router.patch("/:iid", itemsControllers.updateItem);
 router.delete("/:iid", itemsControllers.deleteItem);
 
 module.exports = router;
