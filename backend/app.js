@@ -34,7 +34,8 @@ app.use((err, req, res, next) => {
 mongoose
   .connect(
     `
-mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@cluster0.zqjx1.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority
+mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@cluster0.eyhaq.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority
+
 `
   )
   .then(() => {
