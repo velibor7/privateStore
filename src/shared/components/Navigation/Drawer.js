@@ -9,13 +9,13 @@ const Drawer = (props) => {
   const content = (
     <CSSTransition
       in={props.show}
-      // timeout={200}
+      timeout={200}
       classNames="slide-in-left"
       mountOnEnter
       unmountOnExit
     >
       <aside className="drawer" onClick={props.onClick}>
-        <nav className="drawer__nav-links">{props.children}</nav>
+        {props.children}
       </aside>
     </CSSTransition>
   );
