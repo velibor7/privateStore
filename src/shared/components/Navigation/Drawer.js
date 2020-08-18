@@ -1,7 +1,25 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
-const Drawer = () => {
-  return <div>Drawer</div>;
+import { CSSTransition } from "react-transition-group";
+
+import "./Drawer.css";
+
+const Drawer = (props) => {
+  const content = (
+    <CSSTransition
+      in={props.show}
+      // timeout={200}
+      classNames="slide-in-left"
+      mountOnEnter
+      unmountOnExit
+    >
+      <aside className="drawer" onClick={props.onClick}>
+        <nav className="drawer__nav-links">{props.children}</nav>
+      </aside>
+    </CSSTransition>
+  );
+  return ReactDOM.createPortal(content, document.getElementById("drawer-hook"));
 };
 
 export default Drawer;
