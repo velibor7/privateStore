@@ -1,10 +1,12 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 
 import "./NewItem.css";
 
 const NewItem = () => {
+  const history = useHistory();
+
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -12,7 +14,23 @@ const NewItem = () => {
       price: "",
     },
     onSubmit: (values) => {
-      alert(values.title);
+      fetch("http://localhost:5000/api/items", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: values.title,
+          description: values.description,
+          price: values.price,
+        }),
+      })
+        .then((res) => {
+          console.log(res.json());
+          history.push("/");
+        })
+        .catch((err) => console.log(err));
     },
   });
   return (
