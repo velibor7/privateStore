@@ -1,0 +1,13 @@
+.new-item__form {
+    margin        : 3em auto;
+    align-self    : center;
+    align-content : center;
+    margin-top    : 3em;
+    display       : flex;
+    flex-direction: column;
+    width         : 25em
+}
+
+.new-item__sub-btn {
+    margin: 1em;
+}

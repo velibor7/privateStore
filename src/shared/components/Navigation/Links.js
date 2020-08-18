@@ -12,6 +12,9 @@ const Links = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink to="/new">New</NavLink>
+      </li>
+      <li>
         <NavLink to="/cart">Cart</NavLink>
       </li>
     </ul>
