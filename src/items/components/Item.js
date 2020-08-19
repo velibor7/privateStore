@@ -9,7 +9,7 @@ const Item = (props) => {
     <Card>
       <h2>{props.title}</h2>
       <p>{props.price}</p>
-      <Link>Add to cart</Link>
+      <Link to="/cart">Add to cart</Link>
     </Card>
   );
 };

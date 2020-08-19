@@ -23,7 +23,7 @@ const MainNavigation = () => {
         </nav>
       </Drawer>
 
-      <Header>
+      <Header className="main-navigation__header">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
