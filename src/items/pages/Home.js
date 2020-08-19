@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Item from "../components/Item";
 
+import "./Home.css";
+
 const Home = () => {
   const [items, setItems] = useState([]);
 

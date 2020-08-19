@@ -6,11 +6,13 @@ import "./Item.css";
 
 const Item = (props) => {
   return (
-    <Card>
-      <h2>{props.title}</h2>
-      <p>{props.price}</p>
-      <Link to="/cart">Add to cart</Link>
-    </Card>
+    <li className="item__li">
+      <Card className="item__card">
+        <h2>{props.title}</h2>
+        <p className="i__price">${props.price}</p>
+        <Link to="/cart">Add to cart</Link>
+      </Card>
+    </li>
   );
 };
 
