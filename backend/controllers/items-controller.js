@@ -25,12 +25,13 @@ const createItem = async (req, res, next) => {
   // console.log(errs);
   // return next(new HttpError("Invalid inputs!"));
   // }
-  const { title, description, price } = req.body;
+  const { title, description, price, category } = req.body;
 
   const newItem = new Item({
     title,
     description,
     price,
+    category,
     // image: req.file.path,
   });
   console.log(newItem);

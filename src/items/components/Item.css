@@ -44,3 +44,15 @@
     align-items    : center;
     justify-content: space-around;
 }
+
+.item__category-skydiving {
+    background-color: red;
+}
+
+.item__category-paragliding {
+    background-color: blue;
+}
+
+.item__category-other {
+    background-color: gray;
+}

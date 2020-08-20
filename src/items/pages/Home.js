@@ -25,7 +25,12 @@ const Home = () => {
   return (
     <ul className="home__items-list">
       {items.map((item) => (
-        <Item key={item.id} title={item.title} price={item.price}></Item>
+        <Item
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          category={item.category}
+        ></Item>
       ))}
     </ul>
   );

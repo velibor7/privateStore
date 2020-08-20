@@ -7,6 +7,11 @@ const itemSchema = new Schema({
   description: { type: String, required: true },
   image: { type: String },
   price: { type: Number, required: true },
+  category: {
+    type: String,
+    enum: ["skydiving", "paragliding"],
+    default: "other",
+  },
 });
 
 module.exports = mongoose.model("Item", itemSchema);
