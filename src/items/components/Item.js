@@ -1,12 +1,18 @@
-import React from "react";
-import Card from "../../shared/components/UIElements/Card";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import Card from "../../shared/components/UIElements/Card";
 
 import "./Item.css";
 import cart from "../../shared/icons/cart.svg";
 
 const Item = (props) => {
-  console.log(props);
+  //cart context
+
+  const addToCartHandler = (id) => {
+    console.log(id);
+  };
+
   return (
     <li className="item__li">
       <Card className="item__card">
@@ -19,9 +25,12 @@ const Item = (props) => {
           >
             {props.category}
           </Link>
-          <Link to="/cart">
-            <img src={cart} alt="Cart" className="item__cart-icon" />
-          </Link>
+          <img
+            src={cart}
+            alt="Cart"
+            className="item__cart-icon"
+            onClick={() => addToCartHandler(props.id)}
+          />
         </div>
       </Card>
     </li>
