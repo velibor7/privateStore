@@ -1,6 +1,9 @@
 .item__card {
-    width : 100%;
-    height: 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    width          : 100%;
+    height         : 100%;
 }
 
 .item__li {
@@ -11,9 +14,33 @@
 }
 
 .item__li h2 {
-    color: red;
+    margin    : 0;
+    align-self: center;
 }
 
-.item__li .i__price {
-    color: blue;
+
+.item__li .item__price {
+    align-self  : flex-start;
+    justify-self: flex-end;
+}
+
+.item__cart-icon {
+    width : 1.5em;
+    height: 1.5em;
+}
+
+.item__category {
+    text-decoration : none;
+    color           : white;
+    background-color: red;
+    border          : 0px solid black;
+    padding         : .2em;
+    border-radius   : 10%;
+}
+
+.item__bottom {
+    display        : flex;
+    justify-items  : center;
+    align-items    : center;
+    justify-content: space-around;
 }
