@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-import CartContext from "./cart-context";
+import { CartContext } from "./cart-context";
 import { cartReducer, ADD_ITEM, REMOVE_ITEM } from "./reducers";
 
 const GlobalState = (props) => {
