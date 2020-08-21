@@ -9,13 +9,11 @@ import Cart from "./items/pages/Cart";
 import { CartContext } from "./shared/context/cart-context";
 
 import "./App.css";
+import GlobalState from "./shared/context/GlobalState";
 
 function App() {
-  const [cart, setCart] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
-
   return (
-    <CartContext.Provider value={{ cart, setCart, cartTotal, setCartTotal }}>
+    <GlobalState>
       <Router>
         <MainNavigation className="app__main-navigation"></MainNavigation>
         <Switch>
@@ -30,7 +28,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </CartContext.Provider>
+    </GlobalState>
   );
 }
 

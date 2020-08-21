@@ -3,11 +3,24 @@ import React, { useContext } from "react";
 import { CartContext } from "../../shared/context/cart-context";
 
 const Cart = () => {
-  const cartItems = useContext(CartContext);
+  const cartContext = useContext(CartContext);
 
-  console.log(cartItems);
+  console.log(cartContext);
 
-  return <div>Cart</div>;
+  return (
+    <ul>
+      {cartContext.cart.map((cartItem) => (
+        <li key={cartItem.id}>
+          {cartItem.title} {cartItem.qty}
+          <button
+            onClick={cartContext.removeItemFromCart.bind(this, cartItem.id)}
+          >
+            Remove
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default Cart;
