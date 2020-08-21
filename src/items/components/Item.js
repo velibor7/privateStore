@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Card from "../../shared/components/UIElements/Card";
+
+import { CartContext } from "../../shared/context/cart-context";
 
 import "./Item.css";
 import cart from "../../shared/icons/cart.svg";
 
 const Item = (props) => {
-  //cart context
+  //cart contexe
+  const { cartItems, setCartItems, cartTotal, setCartTotal } = useContext(
+    CartContext
+  );
 
-  const addToCartHandler = (id) => {
-    console.log(id);
+  const addToCartHandler = () => {
+    console.log(props.id);
+    // let itemFromCart = cartItems.find((item) => item.id === props.id);
+    // console.log(itemFromCart);
+    /*
+    if (cartItems.includes()) {
+
+      console.log("++++");
+      // qty++;
+    } else {
+      let newItem = {
+        id: props.id,
+        title: props.title,
+        img: props.img,
+        price: props.price,
+        qty: 1,
+      };
+    }
+    // console.log(cartItems);
+    setCartItems([...cartItems]);
+    setCartTotal(cartTotal + props.price);
+    */
   };
 
   return (
@@ -29,7 +54,7 @@ const Item = (props) => {
             src={cart}
             alt="Cart"
             className="item__cart-icon"
-            onClick={() => addToCartHandler(props.id)}
+            onClick={addToCartHandler}
           />
         </div>
       </Card>
