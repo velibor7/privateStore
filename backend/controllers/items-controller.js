@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 
 const HttpError = require("../models/http-error");
 const Item = require("../models/item");
-const e = require("express");
 
 const getItems = async (req, res, next) => {
   let items;
